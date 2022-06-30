@@ -1,7 +1,7 @@
 
-import express from 'express';
-import dotenv from 'dotenv';
-import {USERS_BBDD} from './bbdd.js';
+import express from "express";
+import dotenv from "dotenv";
+import accountRouter from "./routes/account.js";
 
 dotenv.config();
 
@@ -10,62 +10,13 @@ const server = express();
 
 server.use(express.json());
 server.use(express.text());
+server.use("/account",accountRouter);
 
-// Obtener los detalles de una cuenta a partir de guid
-server.get("/account/:guid", (req,res) => {
-    const { guid } = req.params;
-    const user = USERS_BBDD.find((user) => user.guid === guid);
-
-    if(!user) return res.status(404).send();
-    
-    return res.send(user);
+server.get("/root",(req,res) => {
+   console.log(req.ip);
+   
+   res.send();
 });
-
-//Crear una cuenta
-server.post("/account", (req,res) => {
-    const { guid, name } = req.body;
-
-    if(!guid || !name) return res.state(400).send();
-
-    const user = USERS_BBDD.find((user) => user.guid === guid);
-    if(user) return res.status(409).send();
-
-    USERS_BBDD.push({
-        guid,
-        name,
-    });
-
-    return res.send();
-});
-
-//Actualizar el nombre de una cuenta
-server.patch("/account/:guid",(req,res) => {
-    const { guid } = req.params;
-    const { name } = req.body;
-
-    if(!name) return res.state(400).send();
-
-    const user = USERS_BBDD.find((user) => user.guid === guid);
-
-    if(!user) res.status(404).send();
-
-    user.name = name;
-
-    return res.send();
-});
-
-
-server.delete("/account/:guid",(req,res) => {
-    const {guid} = req.params;
-    const userIndex = USERS_BBDD.findIndex((user) => user.guid === guid);
-
-    if(userIndex === -1) return res.status(404).send();
-    USERS_BBDD.splice(userIndex, 1);
-    
-    res.send();
-});
-
-
 
 server.listen(PORT, () => {
     console.log(`Servidor levantado en el puerto ${PORT}`)
