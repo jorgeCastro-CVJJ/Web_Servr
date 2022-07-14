@@ -21,7 +21,7 @@ function create(account){
     return new Promise((resolve, reject) => {
         const newAccount = {id: uuidv4(), ...account}
         accounts.push(newAccount)
-        writeDataToFile('../bbdd.json', accounts)
+        writeDataToFile('./bbdd.json', accounts)
         resolve(newAccount)
     })
 }

@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function writeDataToFile(filename, content){
-    fs.appendFileSync(filename, JSON.stringify(content), 'utf8', (err) => {
+    fs.writeFile(filename, JSON.stringify(content, null, 2), (err) => {
         if(err){
             console.log(err)
         };
@@ -27,18 +27,9 @@ function getPostData(req){
 }
 
 
-function writeDataLog(filename, content){
-    fs.writeFileSync(filename, content, 'utf8',(err) => {
-        if(err){
-            console.log(err)
-        }
-    })
-}
-
 
 
 module.exports = {
     writeDataToFile,
-    writeDataLog,
     getPostData
 }
