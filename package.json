@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index_plain.js",
-  "type": "commonjs",
   "scripts": {
     "dev": "nodemon ./index_plain.js"
   },

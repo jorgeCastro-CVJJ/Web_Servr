@@ -1,7 +1,10 @@
 
-POST /
-GET /abc
-PATCH /abc
-GET /abc
-DELETE /abc
-GET /abc
+
+
+POST /api/accounts 2022- 7-14 6:25:5
+
+GET /api/accounts 2022- 7-14 6:25:5
+
+POST /api/accounts 2022- 7-14 6:30:47
+
+POST /api/accounts 2022- 7-14 6:34:22

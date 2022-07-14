@@ -1,5 +1,5 @@
 const Account = require('../models/accountsModel');
-
+const { getPostData } = require('../utils')
 
 // @desc    GET all accounts
 // @route   GET /api/accounts
@@ -10,12 +10,12 @@ async function getAccounts(req, res){
         res.writeHead(200, { 'Content-Type':'application/json' })
         res.end(JSON.stringify(accounts));
     } catch (err){
-        console.log(error);
+        console.log(err);
     }
 }
 
 // @desc    GET one account
-// @route   GET /api/account/:id
+// @route   GET /api/account/:id {:id refers whatever number }
 async function getAccount(req, res, id){
     try{
         const account = await Account.findById()
@@ -29,7 +29,7 @@ async function getAccount(req, res, id){
         }
         
     } catch (err){
-        console.log(error);
+        console.log(err);
     }
 }
 
@@ -38,25 +38,29 @@ async function getAccount(req, res, id){
 // @route   POST /api/accounts
 async function createAccount(req, res){
     try{
+        const body = await getPostData(req)
+
+        const {name, isActive,
+            balance, age,
+            eyeColor, company,
+            email, phone,
+            address, registered} = JSON.parse(body);
+
         const account = {
-            name: 'Jose Pablo Test',
-            isActive: true,
-            balance: "$3,546.20",
-            age: 30,
-            eyeColor: "green",
-            company: "DOGNOSIS",
-            email: "pauletteirwin@dognosis.com",
-            phone: "+1 (868) 401-2949",
-            address: "912 Morton Street, Brutus, New Mexico, 9560",
-            registered: "2019-04-30T02:37:23 +05:00"
+            name, isActive,
+            balance, age,
+            eyeColor, company,
+            email, phone,
+            address, registered
         }
-        
+
         const newAccount = await Account.create(account);
+
         res.writeHead(201, {'Content-Type': 'application/json'})
         return res.end(JSON.stringify(newAccount));
 
     } catch (err){
-        console.log(error);
+        console.log(err);
     }
 }
 
