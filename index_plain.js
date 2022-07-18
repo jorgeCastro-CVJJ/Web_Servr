@@ -1,7 +1,7 @@
 const http = require('http');
 const { getAccounts, getAccount, createAccount} = require('./controllers/accountsController')
 
-const PORT  = 3000;
+const PORT  = 8080;
 const  fs  = require('fs');
 const { dataLog } = require('./models/accountsModel');
 const { getPostData } = require('./utils');
