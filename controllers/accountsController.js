@@ -18,7 +18,7 @@ async function getAccounts(req, res){
 // @route   GET /api/account/:id {:id refers whatever number }
 async function getAccount(req, res, id){
     try{
-        const account = await Account.findById()
+        const account = await Account.findById(id)
 
         if(!account) {
             res.writeHead(404, { 'Content-Type':'application/json' })
@@ -55,7 +55,7 @@ async function createAccount(req, res){
         }
 
         const newAccount = await Account.create(account);
-
+        console.log(typeof newAccount)
         res.writeHead(201, {'Content-Type': 'application/json'})
         return res.end(JSON.stringify(newAccount));
 

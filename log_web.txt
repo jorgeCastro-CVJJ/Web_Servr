@@ -1,0 +1,7 @@
+
+Requested Method: GET | URL: /api/accounts | Date: 2022- 7-18 15:7:28
+Requested Method: GET | URL: /api/account/1 | Date: 2022- 7-18 15:7:28
+Requested Method: POST | URL: /api/accounts/ | Date: 2022- 7-18 15:8:56
+Requested Method: POST | URL: /api/accounts/create | Date: 2022- 7-18 15:8:56
+Requested Method: POST | URL: /api/accounts/create | Date: 2022- 7-18 15:9:27
+Requested Method: GET | URL: /api/account/951067ec-4502-4236-ab6e-921f655cc065 | Date: 2022- 7-18 15:11:20

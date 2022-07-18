@@ -260,27 +260,14 @@
     "registered": "2019-04-30T02:37:23 +05:00"
   },
   {
-    "id": "b5b2fe67-c8a2-4470-9330-e5df3f7f26c2",
-    "name": "Jason Momoa",
+    "id": "1becd79c-3475-409e-88c7-d81335682308",
+    "name": "John1234",
     "isActive": true,
     "balance": "$2,416.85",
     "age": 20,
     "eyeColor": "blue",
-    "company": "ZOUNDS",
-    "email": "lydiaconway@zounds.com",
-    "phone": "+1 (955) 547-2554",
-    "address": "529 Kenmore Terrace, Walland, Colorado, 7070",
-    "registered": "2019-07-31T05:07:29 +05:00"
-  },
-  {
-    "id": "951067ec-4502-4236-ab6e-921f655cc065",
-    "name": "Jason Momoa 2",
-    "isActive": true,
-    "balance": "$2,416.85",
-    "age": 20,
-    "eyeColor": "blue",
-    "company": "ZOUNDS",
-    "email": "lydiaconway@zounds.com",
+    "company": "TEC",
+    "email": "sth@tec.mx",
     "phone": "+1 (955) 547-2554",
     "address": "529 Kenmore Terrace, Walland, Colorado, 7070",
     "registered": "2019-07-31T05:07:29 +05:00"

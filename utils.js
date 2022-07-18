@@ -26,10 +26,18 @@ function getPostData(req){
     })
 }
 
+function writeDataLog(filename, content){
+    fs.appendFileSync(filename, content, (err) => {
+        if(err){
+            console.log(err)
+        }
+    })
+}
 
 
 
 module.exports = {
     writeDataToFile,
-    getPostData
+    getPostData,
+    writeDataLog
 }

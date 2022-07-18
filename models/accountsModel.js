@@ -9,9 +9,9 @@ function findAll(){
     });
 };
 
-function findById(){
+function findById(id){
     return new Promise((resolver, reject) => {
-        const account = account.find((acc) => acc.id === id)
+        const account = accounts.find((acc) => acc.id === id)
         resolver(account)
     });
 };
@@ -28,10 +28,11 @@ function create(account){
 
 function dataLog(content){
     return new Promise((resolve, reject) => {
-        writeDataLog('../log_web.txt', content)
+        writeDataLog('./log_web.txt', content)
         resolve(content)
     })
 }
+
 module.exports = {
     findAll,
     findById,
