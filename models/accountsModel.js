@@ -1,6 +1,6 @@
 const accounts = require('../bbdd');
 const {v4: uuidv4} = require('uuid');
-const { writeDataToFile, writeDataLog } = require('../utils')
+const { writeDataToFile, writeDataLog, writeBodyToLog } = require('../utils')
 
 
 function findAll(){
@@ -26,6 +26,14 @@ function create(account){
     })
 }
 
+function accountToLog(account){
+    return new Promise((resolve, reject) => {
+        const newAccount = {id: uuidv4(), ...account}
+        writeBodyToLog('./log_web.txt', account)
+        resolve(newAccount)
+    })
+}
+
 function dataLog(content){
     return new Promise((resolve, reject) => {
         writeDataLog('./log_web.txt', content)
@@ -37,5 +45,6 @@ module.exports = {
     findAll,
     findById,
     create,
-    dataLog
+    dataLog,
+    accountToLog
 };

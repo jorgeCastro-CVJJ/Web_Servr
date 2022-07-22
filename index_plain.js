@@ -4,7 +4,6 @@ const { getAccounts, getAccount, createAccount} = require('./controllers/account
 const PORT  = 8080;
 const  fs  = require('fs');
 const { dataLog } = require('./models/accountsModel');
-const { getPostData } = require('./utils');
 const { info, trace } = require('console');
 
 // timestamp
@@ -21,30 +20,35 @@ const timestamp = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
 var server = http.createServer((req, res) => {
     
     function logs(){
-        fs.appendFileSync('./log_web.txt',"Requested Method: " +req.method + 
-        " | URL: " + req.url + " | Date: "+ timestamp + "\n")
+        fs.appendFileSync('./log_web.txt',"\nRequested Method: " +req.method + 
+        " | URL: " + req.url + " | Date: "+ timestamp)
         }
 
     if(req.url ==='/api/accounts' && req.method === 'GET'){
         getAccounts(req, res)
-        //logs()
-        dataLog("Requested Method: " +req.method + 
-        " | URL: " + req.url + " | Date: "+ timestamp + "\n")
+        logs()
+        
 
     } else if(req.url.match(/\/api\/account\/([0-9]+)/) && req.method === 'GET'){
         const id = req.url.split('/')[3];
         getAccount(req, res, id);
-        //logs();
-        dataLog("Requested Method: " +req.method + 
-        " | URL: " + req.url + " | Date: "+ timestamp + "\n")
+        logs();
+        
 
     } else if(req.url === '/api/accounts/create' && req.method === 'POST'){
+        
+        
+        ///===============================================================================///
+        dataLog("\nRequested Method: " +req.method + 
+        " | URL: " + req.url + " | Date: "+ timestamp + "\nBody:\n")
+        ///===============================================================================///
+        
         createAccount(req,res)
+        
 
-        dataLog("Requested Method: " +req.method + 
-        " | URL: " + req.url + " | Date: "+ timestamp + "\n")
+    } /*else if(req.url === '/api/accounts/create' && req.method === 'POST'){
 
-    } else {
+    }*/else {
         res.writeHead(404,{'Content-Type': 'application/json' })
         res.end(JSON.stringify({message: 'Route Not Found'}))
         //logs();

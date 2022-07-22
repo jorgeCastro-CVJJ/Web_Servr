@@ -1,5 +1,5 @@
 const Account = require('../models/accountsModel');
-const { getPostData } = require('../utils')
+const { getPostData, writeDataLog } = require('../utils')
 
 // @desc    GET all accounts
 // @route   GET /api/accounts
@@ -44,7 +44,7 @@ async function createAccount(req, res){
             balance, age,
             eyeColor, company,
             email, phone,
-            address, registered} = JSON.parse(body);
+            address, registered} = JSON.parse(body)
 
         const account = {
             name, isActive,
@@ -53,11 +53,15 @@ async function createAccount(req, res){
             email, phone,
             address, registered
         }
+        //console.log(body) -> Regresa todos los parametros en JSONstring
+       // writeDataLog('./log_web2.txt', JSON.stringify(account))
+        // console.log(account) -> Regrsa todos los parametros en JSON. Objeto 
 
-        const newAccount = await Account.create(account);
-        console.log(typeof newAccount)
+        const newAccount = await Account.create(account)
+        const bodyLog = await Account.accountToLog(account)
+
         res.writeHead(201, {'Content-Type': 'application/json'})
-        return res.end(JSON.stringify(newAccount));
+        return res.end(JSON.stringify(newAccount))
 
     } catch (err){
         console.log(err);

@@ -8,6 +8,13 @@ function writeDataToFile(filename, content){
     });
 };
 
+function writeBodyToLog(filename, content){
+    fs.appendFileSync(filename, JSON.stringify(content, null, 2), (err) => {
+        if(err){
+            console.log(err)
+        };
+    });
+};
 
 function getPostData(req){
     return new Promise((resolve, reject)=>{
@@ -39,5 +46,6 @@ function writeDataLog(filename, content){
 module.exports = {
     writeDataToFile,
     getPostData,
-    writeDataLog
+    writeDataLog,
+    writeBodyToLog
 }
