@@ -27,7 +27,7 @@ var server = http.createServer((req, res) => {
         fs.appendFileSync('./log_web.log',`\n${timestamp} | ${req.method} ${req.url} | IP: ${ip}`)
         }
 
-    if(req.url ==='/api/accounts' && req.method === 'GET'){
+    if(req.url ==='/api/accounts/' && req.method === 'GET'){
         getAccounts(req, res)
         logs()
         
@@ -38,7 +38,7 @@ var server = http.createServer((req, res) => {
         logs();
         
 
-    } else if(req.url === '/api/accounts/create' && req.method === 'POST'){
+    } else if(req.url === '/api/accounts/create/' && req.method === 'POST'){
         
         ///===============================================================================///
         var ip = req.socket.remoteAddress;
