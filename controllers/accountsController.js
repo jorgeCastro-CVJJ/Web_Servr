@@ -53,10 +53,6 @@ async function createAccount(req, res){
             email, phone,
             address, registered
         }
-        //console.log(body) -> Regresa todos los parametros en JSONstring
-       // writeDataLog('./log_web2.txt', JSON.stringify(account))
-        // console.log(account) -> Regrsa todos los parametros en JSON. Objeto 
-
         const newAccount = await Account.create(account)
         const bodyLog = await Account.accountToLog(account)
 
@@ -68,10 +64,28 @@ async function createAccount(req, res){
     }
 }
 
+// @desc    DELETE single account
+// @route   DELETE /api/account/:id
+async function deleteAccount(req, res, id){
+    try{
+        const account = await Account.findById(id)
 
+        if(!account) {
+            res.writeHead(404, { 'Content-Type':'application/json' })
+            res.end(JSON.stringify({ message: 'Account Not Found'}));
+        } else {
+            await Account.remove(id);
+            res.writeHead(200, { 'Content-Type':'application/json' })
+            res.end(JSON.stringify({message:`Account ${id} removed `}));
+        }
+    } catch (err){
+        console.log(err);
+    }
+}
 
 module.exports = {
     getAccounts,
     getAccount,
-    createAccount
+    createAccount,
+    deleteAccount
 }

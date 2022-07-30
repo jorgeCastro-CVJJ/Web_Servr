@@ -1,0 +1,28 @@
+
+2022- 7-29 22:56:48 | GET /api/accounts | IP: 127.0.0.1
+2022- 7-29 22:56:48 | GET /api/accounts/create | IP: 127.0.0.1
+
+2022- 7-29 23:6:19 | POST /api/accounts/create | IP: 127.0.0.1
+ Body:
+{
+  "name": "Pablo Gabriel Ricardo ",
+  "isActive": true,
+  "balance": "$50,373.00",
+  "age": 32,
+  "eyeColor": "brown",
+  "company": "Promo Shoes",
+  "email": "Sergio.l@hehe.com",
+  "phone": "+52 (55) 246672",
+  "address": "529 Kenmore Terrace, Walland, Colorado, 7070",
+  "registered": "2019-07-31T05:07:29 +06:00"
+}
+2022- 7-29 23:7:21 | GET /api/account/40525554-06bb-4eed-96d2-84eb45e62343%22 | IP: 127.0.0.1
+2022- 7-29 23:7:21 | GET /api/account/40525554-06bb-4eed-96d2-84eb45e62343 | IP: 127.0.0.1
+2022- 7-29 23:7:21 | DELETE /api/account/40525554-06bb-4eed-96d2-84eb45e62343 | IP: 127.0.0.1
+2022- 7-29 23:9:9 | GET /api/account/7 | IP: 127.0.0.1
+2022- 7-29 23:9:9 | DELETE /api/account/7 | IP: 127.0.0.1
+2022- 7-29 23:10:14 | GET /api/account/7 | IP: 127.0.0.1
+2022- 7-29 23:10:14 | DELETE /api/account/7 | IP: 127.0.0.1
+2022- 7-29 23:12:41 | GET /api/account/7 | IP: 127.0.0.1
+2022- 7-29 23:12:41 | DELETE /api/account/7 | IP: 127.0.0.1
+2022- 7-29 23:15:4 | GET /api/account/7 | IP: 127.0.0.1

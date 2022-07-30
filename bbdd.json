@@ -596,5 +596,44 @@
     "phone": "+1 (955) 547-2554",
     "address": "529 Kenmore Terrace, Walland, Colorado, 7070",
     "registered": "2019-07-31T05:07:29 +05:00"
+  },
+  {
+    "id": "7b29fe05-2654-4d7e-abf0-074ffeb76727",
+    "name": "Sergio Lozano",
+    "isActive": true,
+    "balance": "$50,373.00",
+    "age": 32,
+    "eyeColor": "brown",
+    "company": "Promo Shoes",
+    "email": "Sergio.l@hehe.com",
+    "phone": "+52 (55) 246672",
+    "address": "529 Kenmore Terrace, Walland, Colorado, 7070",
+    "registered": "2019-07-31T05:07:29 +06:00"
+  },
+  {
+    "id": "1349217b-c5d5-44bf-96e0-b1632ba6af26",
+    "name": "Sergio Lozano",
+    "isActive": true,
+    "balance": "$50,373.00",
+    "age": 32,
+    "eyeColor": "brown",
+    "company": "Promo Shoes",
+    "email": "Sergio.l@hehe.com",
+    "phone": "+52 (55) 246672",
+    "address": "529 Kenmore Terrace, Walland, Colorado, 7070",
+    "registered": "2019-07-31T05:07:29 +06:00"
+  },
+  {
+    "id": "205e53bd-ef4b-49fa-aead-11d08ffca0f3",
+    "name": "Pablo Gabriel Ricardo ",
+    "isActive": true,
+    "balance": "$50,373.00",
+    "age": 32,
+    "eyeColor": "brown",
+    "company": "Promo Shoes",
+    "email": "Sergio.l@hehe.com",
+    "phone": "+52 (55) 246672",
+    "address": "529 Kenmore Terrace, Walland, Colorado, 7070",
+    "registered": "2019-07-31T05:07:29 +06:00"
   }
 ]
