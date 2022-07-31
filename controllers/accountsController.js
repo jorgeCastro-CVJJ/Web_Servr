@@ -21,8 +21,8 @@ async function getAccount(req, res, id){
         const account = await Account.findById(id)
 
         if(!account) {
-            res.writeHead(404, { 'Content-Type':'application/json' })
-            res.end(JSON.stringify({ message: 'Account Not Found'}));
+            res.writeHead(404, { 'Content-Type':'text/html' })
+            res.end("404 |Page Not Found","utf-8")
         } else {
             res.writeHead(200, { 'Content-Type':'application/json' })
             res.end(JSON.stringify(account));
@@ -71,8 +71,8 @@ async function deleteAccount(req, res, id){
         const account = await Account.findById(id)
 
         if(!account) {
-            res.writeHead(404, { 'Content-Type':'application/json' })
-            res.end(JSON.stringify({ message: 'Account Not Found'}));
+            res.writeHead(404, { 'Content-Type':'text/html' })
+            res.end("404 |Page Not Found","utf-8")
         } else {
             await Account.remove(id);
             res.writeHead(200, { 'Content-Type':'application/json' })

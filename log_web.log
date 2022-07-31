@@ -26,3 +26,10 @@
 2022- 7-29 23:12:41 | GET /api/account/7 | IP: 127.0.0.1
 2022- 7-29 23:12:41 | DELETE /api/account/7 | IP: 127.0.0.1
 2022- 7-29 23:15:4 | GET /api/account/7 | IP: 127.0.0.1
+2022- 7-31 15:27:19 | GET null /dasfefdsfg | IP: 127.0.0.1
+2022- 7-31 15:28:29 | GET null /dasfefdsfg | IP: 127.0.0.1
+2022- 7-31 15:29:5 | GET [object Object] /dasfefdsfg | IP: 127.0.0.1
+2022- 7-31 15:29:5 | GET [object Object] /dasfefdsfg | IP: 127.0.0.1
+2022- 7-31 15:29:30 | GET 404 Not Found /dasfefdsfg | IP: 127.0.0.1
+2022- 7-31 15:29:30 | GET 404 Not Found /dasfefdsfg | IP: 127.0.0.1
+2022- 7-31 15:32:45 | GET 404 Not Found /4040=?desae%20=de%27?d%C2%A1ed | IP: 127.0.0.1

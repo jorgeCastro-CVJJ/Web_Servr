@@ -49,9 +49,9 @@ var server = http.createServer((req, res) => {
         createAccount(req,res)
         
 
-    } /*else if(req.url === '/api/accounts/create' && req.method === 'POST'){
-
-    }*/else if(req.url.match(/\/api\/account\/([0-9]+)/) && req.method === 'DELETE'){
+    } /*else if(req.url === '/api/accounts/create' && req.method === 'POST'){}*/
+     /*else if(req.url === '/api/accounts/create' && req.method === 'POST'){}<--- Need to check out forms or encoded forms*/
+    else if(req.url.match(/\/api\/account\/([0-9]+)/) && req.method === 'DELETE'){
         const id = req.url.split('/')[3];
         deleteAccount(req, res, id);
         logs();
@@ -59,8 +59,12 @@ var server = http.createServer((req, res) => {
 
     }else {
         res.writeHead(404,{'Content-Type': 'text/html' })
-        res.end("404 | Page Not Found")
-        logs();
+        res.end("404 | Page Not Found","utf-8")
+        //logs()
+        var ip = req.socket.remoteAddress;
+        ip = ip.split(':').slice(-1); 
+        fs.appendFileSync('./log_web.log',`\n${timestamp} | ${req.method} 404 Not Found ${req.url} | IP: ${ip}`)
+        
     }
 });
 
